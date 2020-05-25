@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import classes from './Auth.css'
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
+import axios from 'axios'
 
 function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -44,8 +45,8 @@ export default class Auth extends Component{
 
     }
 
-    registerHandler = () => {
-
+    registerHandler = async () => {
+         axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]')
     }
 
     submitHandler = (event) => {
